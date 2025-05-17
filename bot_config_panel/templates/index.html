@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Настройки новостного бота</title>
+  <style>
+    body { font-family: sans-serif; margin: 2em; max-width: 700px; }
+    label { display: block; margin-top: 1em; font-weight: bold; }
+    input, textarea { width: 100%; padding: 0.5em; margin-top: 0.5em; }
+    button { margin-top: 1.2em; padding: 0.5em 1.5em; }
+    .button-row {
+      margin-top: 2em;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Настройки новостного бота</h1>
+  <form action="/save" method="post">
+
+    <label for="hours">Анализировать новости за (часов):</label>
+    <input type="number" name="hours" id="hours" value="{{ config.get('hours', 24) }}">
+
+    <label for="rus_limit">Максимум новостей:</label>
+    <input type="number" name="rus_limit" id="rus_limit" value="{{ config.get('rus_limit', 10) }}">
+
+    <label for="per_src_limit">Лимит на источник:</label>
+    <input type="number" name="per_src_limit" id="per_src_limit" value="{{ config.get('per_src_limit', 2) }}">
+
+    <label for="keywords">Ключевые слова (через запятую):</label>
+    <input type="text" name="keywords" id="keywords" value="{{ ', '.join(config.get('keywords', [])) }}">
+
+    <label for="rss_feeds">RSS-источники (JSON):</label>
+    <textarea name="rss_feeds" id="rss_feeds" rows="10">{{ rss_feeds | tojson(indent=2) }}</textarea>
+
+    <button type="submit">💾 Сохранить</button>
+  </form>
+
+  <div class="button-row">
+    <form method="post" action="/reset_config">
+      <button type="submit">♻️ Сбросить к умолчаниям</button>
+    </form>
+
+    <form method="get" action="/download_config">
+      <button type="submit">⬇️ Скачать config.json</button>
+    </form>
+
+    <form method="post" action="/restart_bot">
+      <button type="submit">🔄 Перезапустить бота</button>
+    </form>
+  </div>
+</body>
+</html>

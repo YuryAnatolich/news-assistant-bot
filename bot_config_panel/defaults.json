@@ -1,0 +1,10 @@
+{
+  "hours": 24,
+  "rus_limit": 10,
+  "per_src_limit": 2,
+  "keywords": ["дивиденды", "отчёт", "убыток"],
+  "rss_feeds": {
+    "SmartLab": "https://smart-lab.ru/rss/",
+    "RBK": "https://rssexport.rbc.ru/rbcnews/news/30/full.rss"
+  }
+}
