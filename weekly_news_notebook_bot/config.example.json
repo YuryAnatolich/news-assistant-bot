@@ -1,0 +1,16 @@
+{
+  "telegram": {
+    "bot_token": "<TELEGRAM_BOT_TOKEN>",
+    "chat_id": "<TELEGRAM_CHAT_ID>"
+  },
+  "params": {
+    "days": 7,
+    "limit": 10,
+    "important": 5
+  },
+  "files": {
+    "sources_file": "./weekly_news_notebook_bot/sources.json",
+    "seen_file": "./weekly_news_notebook_bot/seen_news.json",
+    "log_file": "./weekly_news_notebook_bot/outputs/news_log.csv"
+  }
+}

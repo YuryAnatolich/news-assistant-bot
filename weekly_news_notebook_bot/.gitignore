@@ -1,0 +1,8 @@
+# Local secrets / runtime state
+config_local.json
+seen_news.json
+
+# Runtime artifacts
+logs/
+outputs/
+.ipynb_checkpoints/
