@@ -1,0 +1,22 @@
+[
+  {
+    "id": "x5_press",
+    "name": "X5 Press",
+    "type": "html",
+    "url": "https://www.x5.ru/en/press-center/press-releases/",
+    "parser": "x5_press",
+    "enabled": true,
+    "priority": 80,
+    "tags": ["X5", "FIVE", "press", "corp"]
+  },
+  {
+    "id": "rossetimr_press",
+    "name": "Россети Московский регион",
+    "type": "html",
+    "url": "https://rossetimr.ru/en/about/press/company_news/",
+    "parser": "rossetimr_press",
+    "enabled": true,
+    "priority": 80,
+    "tags": ["MSRS", "press", "news"]
+  }
+]
